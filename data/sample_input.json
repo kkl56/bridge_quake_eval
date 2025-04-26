@@ -1,0 +1,37 @@
+{
+  "span": 20.0,
+  "height": 10.0,
+  "material": {
+    "E": 3000.0,
+    "fc": 30.0,
+    "pier_width": 1.2,
+    "deck_area": 3.0,
+    "deck_inertia": 1.0
+  },
+  "analysis": {
+    "static_load": 200.0,
+    "ground_motion": {
+      "file": "data/sample_eq.txt",
+      "dt": 0.02,
+      "duration": 1.2
+    }
+  },
+  "fragility": {
+    "pier_drift": {
+      "slight": {"median": 0.004, "beta": 0.5},
+      "moderate": {"median": 0.008, "beta": 0.5},
+      "extensive": {"median": 0.025, "beta": 0.5},
+      "complete": {"median": 0.05, "beta": 0.5}
+    },
+    "deck_disp": {
+      "slight": {"median": 0.02, "beta": 0.6},
+      "moderate": {"median": 0.05, "beta": 0.6},
+      "extensive": {"median": 0.1, "beta": 0.6},
+      "complete": {"median": 0.3, "beta": 0.6}
+    }
+  },
+  "output": {
+    "save_results": true,
+    "result_file": "results.json"
+  }
+}
